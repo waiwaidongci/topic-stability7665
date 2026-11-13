@@ -1,0 +1,8 @@
+export interface User{id:number;email:string;name:string;role:string}
+export interface Corpus{id:number;name:string;filename:string;description:string;document_count:number}
+export interface Document{id:number;corpus_id:number;reference:string;title:string;tokens_text:string}
+export interface Profile{id:number;run_id:number;topic_index:number;label:string;editor_note:string;weights:{term:string;weight:number}[];mean_similarity:number}
+export interface Replicate{index:number;seed:number;iterations:number;reconstruction_error:number;relative_error:number;alignment:{permutation:number[];similarities:number[];cosine_matrix:number[][]};W:number[][];H:number[][];aligned_W:number[][];aligned_H:number[][]}
+export interface Run{id:number;corpus_id:number;name:string;config:{k:number;repeats:number;seed:number;min_df:number;max_iter:number;tolerance:number};status:string;result:{fingerprint?:string;k?:number;repeats?:number;effective_documents?:number;vocabulary?:string[];idf?:number[];document_frequency?:number[];idf_n_documents?:number;excluded_documents?:{id:number;reference:string;reason:string}[];mean_alignment_similarity?:number;baseline_relative_error?:number;reference_seed?:number;replicates?:Replicate[];document_topics?:{id:number;reference:string;title:string;activation:number[];relative_activation:number[]|null}[];tfidf_parameters?:Record<string,any>};error?:string;created_at:string}
+export interface Note{id:number;name:string;run_id:number;profile_ids:number[];profile_snapshot:Profile[];interpretation:string;next_step:string;status:string;review_note:string;created_at:string}
+export interface Audit{id:number;actor:string;action:string;detail:object;created_at:string}

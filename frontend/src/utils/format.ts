@@ -1,0 +1,1 @@
+export const dec=(n:number|undefined,d=4)=>n==null?'—':n.toFixed(d);export const pct=(n:number|null|undefined)=>n==null?'—':(n*100).toFixed(1)+'%';export const date=(s:string)=>new Date(s.endsWith('Z')?s:s+'Z').toLocaleString('zh-CN',{hour12:false});

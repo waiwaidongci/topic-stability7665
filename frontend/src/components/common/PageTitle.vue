@@ -1,0 +1,1 @@
+<script setup lang="ts">defineProps<{index:string;title:string;description:string}>()</script><template><header class="page-title"><div><small>ZICEN EDITORIAL / TYPE {{index}}</small><h1>{{title}}</h1><p>{{description}}</p></div><slot/></header></template>
